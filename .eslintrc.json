@@ -1,0 +1,366 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "airbnb-babel",
+    "plugin:import/recommended",
+    "plugin:no-unsanitized/DOM",
+    "plugin:optimize-regex/recommended",
+    "plugin:promise/recommended",
+    "plugin:regexp/recommended",
+    "plugin:security/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:jsdoc/recommended",
+    "plugin:wc/recommended",
+    "plugin:lit/recommended"
+  ],
+  "globals": {
+    "__buildMode__": true,
+    "__isDevBuild__": true,
+    "__scriptName__": true,
+    "GM": true,
+    "GM_info": true
+  },
+  "ignorePatterns": [
+    "dist/",
+    "node_modules/",
+    "bin/",
+    "coverage/",
+    "PlanetSort.user.js",
+    "webpack.development.config.js",
+    "webpack.production.config.js"
+  ],
+  "overrides": [
+    {
+      "extends": [
+        "plugin:jest-formatting/recommended",
+        "plugin:jest/recommended",
+        "plugin:jest/style"
+      ],
+      "files": [
+        "tests/**"
+      ],
+      "plugins": [
+        "jest",
+        "jest-formatting"
+      ],
+      "rules": {
+        "no-unused-vars": "off",
+        "sort-keys-plus/sort-keys": "off",
+        "jsdoc/require-jsdoc": "off",
+        "import/order": "off",
+        "no-underscore-dangle": "off"
+      }
+    }
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "babelOptions": {
+      "plugins": [
+        "@babel/plugin-syntax-import-assertions"
+      ]
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "align-assignments",
+    "align-import",
+    "no-constructor-bind",
+    "no-loops",
+    "promise",
+    "regexp",
+    "sonarjs",
+    "sort-keys-plus",
+    "jsdoc",
+    "perfectionist"
+  ],
+  "rules": {
+    "align-import/align-import": [
+      "error"
+    ],
+    "align-assignments/align-assignments": [
+      "error",
+      {
+        "requiresOnly": false
+      }
+    ],
+    "array-bracket-spacing": [
+      "error",
+      "always"
+    ],
+    "arrow-parens": [
+      "error",
+      "as-needed",
+      {
+        "requireForBlockBody": true
+      }
+    ],
+    "babel/no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
+    "babel/semi": [
+      "error",
+      "never"
+    ],
+    "babel/camelcase": "off",
+    "camelcase": "off",
+    "class-methods-use-this": "off",
+    "complexity": [
+      "error",
+      {
+        "max": 4
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never",
+        "imports": "always-multiline",
+        "objects": "always-multiline"
+      }
+    ],
+    "consistent-return": "off",
+    "eqeqeq": "error",
+    "func-names": [
+      "error",
+      "as-needed"
+    ],
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
+    "function-call-argument-newline": [
+      "error",
+      "consistent"
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "always"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc"
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling"
+        ]
+      }
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "MemberExpression": "off",
+        "SwitchCase": 1,
+        "FunctionExpression": {
+          "parameters": "first"
+        },
+        "CallExpression": {
+          "arguments": "first"
+        },
+        "ArrayExpression": "first",
+        "ObjectExpression": "first"
+      }
+    ],
+    "jsdoc/no-defaults": "off",
+    "jsdoc/require-jsdoc": [
+      "error",
+      {
+        "enableFixer": false,
+        "require": {
+          "ArrowFunctionExpression": true,
+          "ClassDeclaration": true,
+          "ClassExpression": true,
+          "FunctionDeclaration": true,
+          "FunctionExpression": true,
+          "MethodDefinition": true
+        },
+        "exemptEmptyConstructors": true,
+        "checkGetters": "no-setter",
+        "checkSetters": "no-getter"
+      }
+    ],
+    "jsdoc/check-line-alignment": [
+      "warn",
+      "always"
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "singleLine": {
+          "beforeColon": false,
+          "afterColon": true
+        },
+        "multiLine": {
+          "beforeColon": false,
+          "afterColon": true
+        },
+        "align": {
+          "beforeColon": true,
+          "afterColon": true,
+          "on": "colon"
+        }
+      }
+    ],
+    "linebreak-style": "off",
+    "lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "ignoreComments": true,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true
+      }
+    ],
+    "no-console": "off",
+    "no-constant-binary-expression": "error",
+    "no-constructor-bind/no-constructor-bind": "error",
+    "no-constructor-bind/no-constructor-state": "error",
+    "no-constructor-return": "off",
+    "no-eval": "error",
+    "no-extra-bind": "error",
+    "no-invalid-this": "error",
+    "no-loops/no-loops": "error",
+    "no-multi-spaces": "off",
+    "no-plusplus": "off",
+    "no-unneeded-ternary": "error",
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
+    "no-useless-constructor": "off",
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": {
+          "multiline": true,
+          "consistent": true
+        },
+        "ObjectPattern": {
+          "multiline": true,
+          "consistent": true
+        }
+      }
+    ],
+    "object-shorthand": [
+      "error",
+      "consistent"
+    ],
+    "perfectionist/sort-classes": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc",
+        "ignore-case": true,
+        "groups": [
+          "static-property",
+          "static-private-property",
+          "property",
+          "private-property",
+          "constructor",
+          "method",
+          "private-method",
+          "static-method",
+          "static-private-method",
+          [
+            "get-method",
+            "set-method"
+          ]
+        ]
+      }
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "quote-props": [
+      "error",
+      "consistent-as-needed"
+    ],
+    "regexp/strict": "off",
+    "security/detect-object-injection": "off",
+    "semi": [
+      "error",
+      "never"
+    ],
+    "sort-keys-plus/sort-keys": [
+      "error",
+      "asc",
+      {
+        "natural": true,
+        "allowLineSeparatedGroups": true
+      }
+    ],
+    "space-in-parens": [
+      "error",
+      "never"
+    ],
+    "template-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    "unicorn/no-array-for-each": "off",
+    "unicorn/no-null": "off",
+    "unicorn/no-static-only-class": "off"
+  },
+  "settings": {
+    "wc": {
+      "elementBaseClasses": [
+        "LitElement",
+        "HTMLElement"
+      ]
+    }
+  }
+}
