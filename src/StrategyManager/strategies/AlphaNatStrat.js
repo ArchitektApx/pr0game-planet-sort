@@ -14,7 +14,7 @@ export default class AlphaNatStrat {
   static SettingsDefinition = {
     description : 'Alphabetical sort with customizing options for numbers and locale differences.',
     displayName : 'Alphabetical/Natural Sort',
-    enabled     : true,
+    enabled     : false,
     name        : 'AlphaNatStrat',
     settings    : {
       caseFirst: {
